@@ -31,6 +31,9 @@ The dataset contains 18 CSV files, and aligns with the ROCCC approach:
 
 ## 4. Analyze    
 
-## 5. Share    
+
+
+## 5. Share   
+[Link to visualizations](https://github.com/codinglovespri/BellabeatCaseStudy/blob/405b84af52ebeb1e2878b10fc213d3befb11a0c2/Bellabeat%20Visualizations.ipynb)
 
 ## 6. Act
