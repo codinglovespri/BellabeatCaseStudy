@@ -82,9 +82,9 @@ activity = activity.sort_values('DayofWeek')
 ```
 This sorts the dataframe by the day of weeks for easier aggregate analysis.
 
-[Link to SQL script](https://github.com/codinglovespri/BellabeatCaseStudy/blob/10b3f80493b8cf798b5e74c78243bbe4ab34a2ea/bellabeat.sql)  
+[Link to SQL script](https://github.com/codinglovespri/BellabeatCaseStudy/blob/89f5566c740876ef5a602267910f980a7c6295de/bellabeat.sql)  
 
-[Link to Jupyter Notebook](https://github.com/codinglovespri/BellabeatCaseStudy/blob/405b84af52ebeb1e2878b10fc213d3befb11a0c2/Bellabeat%20Visualizations.ipynb)  
+[Link to Jupyter Notebook](https://github.com/codinglovespri/BellabeatCaseStudy/blob/89f5566c740876ef5a602267910f980a7c6295de/Bellabeat%20Analysis%20-%20Google%20Data%20Analytics%20Capstone.ipynb)  
 
 
 ## 4. Analyze    
@@ -123,62 +123,95 @@ WHERE Id NOT IN (
 ```
 * There are 28 records that are either not in the sleep log or the weight log. 
 * From sleep log, there were only 24 users who recorded their sleep. 
-* From weight log, there were only 8 users who recorded their weight.
+* From weight log, there were only 8 users who recorded their weight.		
+
+### Frequency users record sleep and weight data		
+
+![sleepdata](https://user-images.githubusercontent.com/97275273/211120242-d19a5f40-37ae-4522-8298-91b74b991abf.png)		
+
+* Users were least likely to record sleep data during Sunday and Monday. 
+
+![weightdata](https://user-images.githubusercontent.com/97275273/211120245-68194ea6-6cb2-464b-aeaa-85d32309273e.png)			
+
+* Users were least likely to record weight data during Friday and Saturday. 
+
 
 ## 5. Share   
 Here, I created visualizations using Matplotlib to communicate my findings.   
 
-[Link to Jupyter Notebook](https://github.com/codinglovespri/BellabeatCaseStudy/blob/405b84af52ebeb1e2878b10fc213d3befb11a0c2/Bellabeat%20Visualizations.ipynb)  
+[Link to Jupyter Notebook](https://github.com/codinglovespri/BellabeatCaseStudy/blob/89f5566c740876ef5a602267910f980a7c6295de/Bellabeat%20Analysis%20-%20Google%20Data%20Analytics%20Capstone.ipynb)  
 
-### Visualizations  
-![CaloriesBurned](https://user-images.githubusercontent.com/97275273/210922428-401d54f9-23d0-4007-bdc3-cbd7e8385f73.png)    
-``` diff
+![avgsteps](https://user-images.githubusercontent.com/97275273/211120742-243f087b-21f2-4e6f-b3e7-bcc65a60c9df.png)
+
+![avgcalories (1)](https://user-images.githubusercontent.com/97275273/211120754-e0a163be-2670-494c-9c1d-6a501cb22d52.png)
+
+![avgsedentaryminutes](https://user-images.githubusercontent.com/97275273/211120763-971f356b-1680-4907-a7d0-7150279e3436.png)
+
+### Sleep
+
+![avgsleep](https://user-images.githubusercontent.com/97275273/211120866-21c29374-c4d9-464c-8fab-8dab9c3778ca.png)
+
+![timetosleep](https://user-images.githubusercontent.com/97275273/211120858-a4f186fb-7eca-4fa5-9ded-24d355c555ca.png)
+
+### Calories vs Sleep
+
+![CaloriesBurned](https://user-images.githubusercontent.com/97275273/211120386-6ad15d54-0d91-430f-83de-00e9d0a55884.png)
+
+``` diff!
 The more steps taken in a day, the more calories a user will burn.    
 ```
-![CaloriesBurnedMedian](https://user-images.githubusercontent.com/97275273/210922510-37de317a-567c-4977-a35e-c551c9c8abb3.png)    
+![CaloriesBurnedMedian](https://user-images.githubusercontent.com/97275273/211120426-4091f6a2-4ed6-4585-aa0b-5e7ac0e33621.png)
+
 ``` diff
 The same graph, with the median steps and median calories burned included. 
-```
-
-
-### Active Levels vs Total Minutes Asleep   
+```		
+### Activity Level vs Sleep 
+ 
 I plotted the line of regression in black to identify the correlation easier. 
-![Sedentary](https://user-images.githubusercontent.com/97275273/210922816-8577e79a-d157-4205-bb56-9368c6cf6398.png)   
+![sedentaryandsleep](https://user-images.githubusercontent.com/97275273/211120940-1f334f5e-74dd-415c-bcdd-664bd57bb862.png)
+
 ```diff
 Correlation coefficient: -0.6010731396971011    
 There is a pretty strong negative correlation between the two variables, showing that the more sedentary a user is, the less sleep they get.   
 ```
  
-![LightlyActive](https://user-images.githubusercontent.com/97275273/210922804-6fcc3702-c31f-4607-aab6-380aaf782d8a.png)  
+![lightlyactiveandsleep](https://user-images.githubusercontent.com/97275273/211120962-7ba8278e-7f95-4258-a70d-db4595f815cc.png)
+
 ```diff
 Correlation coefficient: 0.027583356789564462
 There is not a strong correlation between the two variables.
 ```
 
-![FairlyActive](https://user-images.githubusercontent.com/97275273/210922789-2c59341a-1d35-4546-b5b7-24985ae7ffbd.png)  
+![fairlyactiveandsleep](https://user-images.githubusercontent.com/97275273/211120971-08cea67b-c669-465d-8a3a-9fabe7f535bf.png)
+
 ```diff
 Correlation coefficient: -0.2492079302480945
 There is not a strong correlation between the two variables.
 ```
+![veryactiveandsleep](https://user-images.githubusercontent.com/97275273/211120974-2f6aafa7-dbd5-4e52-965e-7a0175208f6e.png)
 
-![VeryActive](https://user-images.githubusercontent.com/97275273/210922820-3281c5de-f58f-47e9-8ab4-4c474b7f52b9.png)
 ```diff
 Corrleation coefficient: -0.08812657953070487
 There is not a strong correlation between the two variables.
 ```
 
-![PercentageBreakdown](https://user-images.githubusercontent.com/97275273/211079572-e14e57b2-2338-4f8a-9375-5f06c3d123b7.png)
+![PercentageBreakdown](https://user-images.githubusercontent.com/97275273/211120986-ff54ab4c-92ff-472b-8852-4ddaed82ea8b.png)
 ```diff
 A breakdown of the activity level amongst the participants.
 ```
-
-### Key findings:
-
-* The more steps taken in a day, the more calories a user can burn. 
-* The less time users spend being sedentary, the more sleep they get.
-* Most users in the dataset spend their time in the study being sedentary. 
+****
+### Key findings: 
+* Users recorded weight data the least on Friday and Saturday (the beginning of the weekend). 
+* Users recorded sleep data the least during Sunday and Monday (the end of the weekend). 
+* Most people in the study were sedentary, 81%.
+* Saturday is the most active day, people take the most steps and burn the most calories and have the least amount of sedentary activity as well. 
+* People have the hardest time falling asleep on Sunday, however they also get the most amount of sleep on that day. 
+* Users burned more calories the more steps they took.
+* There is a strong correlation between amount of time spent being sedentary and amount of sleep → the more time people spent being sedentary, the less sleep they got. 
 
 ## 6. Act
-* Conclusions:
-* 
+Recommendations:
+* I would encourage Bellabeat to market that their device is comfortable to wear throughout the day, especially during the night or when going out (due to the lack of data on weekends).
+* I would encourage Bellabeat to promote body-positivity and inclusivity in their marketing campaigns as the data shows there are more missing weight data than sleep data. 
+* I would suggest Bellabeat to create an award system that rewards users with a digital badge or trophy when they hit 10,000 steps, which is the recommended daily average to boost health. Any sort of motivation to encourage users to increase daily steps, as the average daily steps in the dataset was about 7,600, significantly lower than 10,00. 
 
