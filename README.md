@@ -1,15 +1,18 @@
 # BellabeatCaseStudy    
 
-## Scenario  
-Bellabeat is a high-tech company that focuses on health-focused smart products. Since 2013, the company has not only launched multiple products like the Bellabeat app and Leaf, but it has also opened offices globally, and has successfully created a name for themselves as a tech-driven wellness company for women. In this case, I will analyze the smart device data to guide marketing strategy for the company. 
+## 💡Scenario💡  
+Bellabeat is a high-tech company that focuses on health-focused smart products. Since 2013, the company has not only launched multiple products like the Bellabeat app and Leaf, but it has also opened offices globally, and has successfully created a name for themselves as a tech-driven wellness company for women. In this case, I will analyze the smart device data to guide marketing strategy for the company. 		
 
-## 1. Ask    
+I will be using the six step data analysis process: 
+Ask, Prepare, Process, Analyze, Share, Act
+
+## 1. Ask ❓ 
 
 #### Task:   
 Analyze Fitbit data to gain insight and help guide marketing strategy for Bellabeat to grow as a global player.   
 #### Stakeholders:   
 Urška Sršen and Sando Mur (executive team members), and the Bellabeat marketing analytics team
-## 2. Prepare   
+## 2. Prepare ⚙️  
 #### Data Source:   
 30 participants FitBit Fitness Tracker Data from Mobius: https://www.kaggle.com/arashnic/fitbit    
 
@@ -27,12 +30,11 @@ The dataset contains 18 CSV files, and aligns with the ROCCC approach:
 * Cited: Unknown.
 
 
-## 3. Process    
+## 3. Process 💻    
 ### Explore and examine data
 ```diff
 ALTER TABLE dailyactivity_merged RENAME TO daily_activity;
 ALTER TABLE sleepday_merged RENAME TO sleep_log;
-ALTER TABLE sleepday_merged1 RENAME TO sleep_log_copy;
 ALTER TABLE weightloginfo_merged RENAME TO weight_log;
 ```
 Changing the table names to match naming conventions.
@@ -82,16 +84,16 @@ activity = activity.sort_values('DayofWeek')
 ```
 This sorts the dataframe by the day of weeks for easier aggregate analysis.
 
-[Link to SQL script](https://github.com/codinglovespri/BellabeatCaseStudy/blob/89f5566c740876ef5a602267910f980a7c6295de/bellabeat.sql)  
+🔧 [Link to SQL script](https://github.com/codinglovespri/BellabeatCaseStudy/blob/89f5566c740876ef5a602267910f980a7c6295de/bellabeat.sql)  
 
-[Link to Jupyter Notebook](https://github.com/codinglovespri/BellabeatCaseStudy/blob/89f5566c740876ef5a602267910f980a7c6295de/Bellabeat%20Analysis%20-%20Google%20Data%20Analytics%20Capstone.ipynb)  
+🔧 [Link to Jupyter Notebook](https://github.com/codinglovespri/BellabeatCaseStudy/blob/89f5566c740876ef5a602267910f980a7c6295de/Bellabeat%20Analysis%20-%20Google%20Data%20Analytics%20Capstone.ipynb)  
 
 
-## 4. Analyze    
+## 4. Analyze 📊    
 
 ```diff
 SELECT AVG(TotalMinutesAsleep) AS AvgMinutesAsleep, AVG(TotalMinutesAsleep / 60) AS AvgHoursAsleep
-FROM sleep_log_copy;
+FROM sleep_log;
 /* Finding the average total minutes asleep */
 ```
 The average minutes asleep is 419.4673, also about 7 hours.
@@ -136,10 +138,10 @@ WHERE Id NOT IN (
 * Users were least likely to record weight data during Friday and Saturday. 
 
 
-## 5. Share   
+## 5. Share 📋   
 Here, I created visualizations using Matplotlib to communicate my findings.   
 
-[Link to Jupyter Notebook](https://github.com/codinglovespri/BellabeatCaseStudy/blob/89f5566c740876ef5a602267910f980a7c6295de/Bellabeat%20Analysis%20-%20Google%20Data%20Analytics%20Capstone.ipynb)  
+🎨 [Link to Jupyter Notebook](https://github.com/codinglovespri/BellabeatCaseStudy/blob/89f5566c740876ef5a602267910f980a7c6295de/Bellabeat%20Analysis%20-%20Google%20Data%20Analytics%20Capstone.ipynb)  
 
 ![avgsteps](https://user-images.githubusercontent.com/97275273/211120742-243f087b-21f2-4e6f-b3e7-bcc65a60c9df.png)
 
@@ -147,13 +149,13 @@ Here, I created visualizations using Matplotlib to communicate my findings.
 
 ![avgsedentaryminutes](https://user-images.githubusercontent.com/97275273/211120763-971f356b-1680-4907-a7d0-7150279e3436.png)
 
-### Sleep
+### Sleep 💤
 
 ![avgsleep](https://user-images.githubusercontent.com/97275273/211120866-21c29374-c4d9-464c-8fab-8dab9c3778ca.png)
 
 ![timetosleep](https://user-images.githubusercontent.com/97275273/211120858-a4f186fb-7eca-4fa5-9ded-24d355c555ca.png)
 
-### Calories vs Sleep
+### Calories vs Sleep 🏃‍♂️
 
 ![CaloriesBurned](https://user-images.githubusercontent.com/97275273/211120386-6ad15d54-0d91-430f-83de-00e9d0a55884.png)
 
@@ -165,7 +167,7 @@ The more steps taken in a day, the more calories a user will burn.
 ``` diff
 The same graph, with the median steps and median calories burned included. 
 ```		
-### Activity Level vs Sleep 
+### Activity Level vs Sleep 🏋️‍♀️
  
 I plotted the line of regression in black to identify the correlation easier. 
 ![sedentaryandsleep](https://user-images.githubusercontent.com/97275273/211120940-1f334f5e-74dd-415c-bcdd-664bd57bb862.png)
@@ -209,8 +211,8 @@ A breakdown of the activity level amongst the participants.
 * Users burned more calories the more steps they took.
 * There is a strong correlation between amount of time spent being sedentary and amount of sleep → the more time people spent being sedentary, the less sleep they got. 
 
-## 6. Act
-Recommendations:
+## 6. Act 👩🏻‍🏫
+### Recommendations:
 * I would encourage Bellabeat to market that their device is comfortable to wear throughout the day, especially during the night or when going out (due to the lack of data on weekends).
 * I would encourage Bellabeat to promote body-positivity and inclusivity in their marketing campaigns as the data shows there are more missing weight data than sleep data. 
 * I would suggest Bellabeat to create an award system that rewards users with a digital badge or trophy when they hit 10,000 steps, which is the recommended daily average to boost health. Any sort of motivation to encourage users to increase daily steps, as the average daily steps in the dataset was about 7,600, significantly lower than 10,00. 
