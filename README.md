@@ -1,4 +1,4 @@
-# BellabeatCaseStudy    
+# Bellabeat Case Study    
 
 ## 💡Scenario💡  
 Bellabeat is a high-tech company that focuses on health-focused smart products. Since 2013, the company has not only launched multiple products like the Bellabeat app and Leaf, but it has also opened offices globally, and has successfully created a name for themselves as a tech-driven wellness company for women. In this case, I will analyze the smart device data to guide marketing strategy for the company. 		
